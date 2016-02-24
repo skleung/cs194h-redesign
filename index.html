@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </head>
 
@@ -30,14 +30,28 @@
     <section id="hero">
         <div class="container">
             <div class="row">
-                <div class="col m5 s12">
+                <div class="col m6">
                     <h1>CS194H</h1>
-                    <p>User Experience Design Project</p>
+                    <h5 style="margin-top: 20px">User Experience Design Project</h5>
+                    <h5>Winter 2016</h5>
+                    <a class="deep-orange waves-effect waves-light btn" href="#" style="margin-top: 30px">Syllabus</a>
+                </div>
+                <div class="col m6">
+                    <div class="card teal lighten-4">
+                        <div class="card-content teal-text text-darken-3">
+                            <div class="card-title">
+                                Course Description
+                            </div>
+                            <p>
+                                Advanced methods for designing, prototyping, and evaluating user interfaces to computing applications. Novel interface technology, advanced interface design methods, and prototyping tools. Substantial, quarter-long course project that will be presented in a public presentation.
+                            </p>
+                        </div>
+                        <div class="card-action teal-text text-darken-3">
+                            <p> Prerequisites: CS 147, or permission of instructor.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <a class="btn-floating scroll-link deep-orange right btn-large waves-effect waves-light z-depth-0" href="#about">
-                <i class="fa fa-chevron-down"></i>
-            </a>
         </div>
     </section>
 </div>
@@ -46,7 +60,7 @@
     <div class="container">
         <div class="row">
             <div class="col s4">
-                <div class="card">
+                <div class="card card-autoheight">
                     <div class="card-image">
                         <img src="img/design-bg.png">
                         <span class="card-title">Design</span>
@@ -60,7 +74,7 @@
             </div>
 
             <div class="col s4">
-                <div class="card">
+                <div class="card card-autoheight">
                     <div class="card-image">
                         <img src="img/prototype-bg.png">
                         <span class="card-title">Prototype</span>
@@ -73,11 +87,12 @@ Prototyping turns ideas into tangible forms that can be included or excluded in 
             </div>
 
             <div class="col s4">
-                <div class="card">
+                <div class="card card-autoheight">
                     <div class="card-image teal">
-                        <img src="">
+                        <img src="img/evaluate-bg.png">
                         <span class="card-title">Evaluate</span>
-                    </div>                        
+                    </div>
+
                     <div class="card-content teal-text text-darken-3">
                         <p>
 Evaluation is how we choose whether a design or feature moves forward in our process or needs to be discarded or revised. Students in the dt+UX^2 course apply usability testing in the lab and in the field to improve their designs.                        </p>
@@ -114,6 +129,25 @@ $(function() {
             }, 2000, 'swing');
             hashTagActive = this.hash;
         }
+    });
+
+    // auto-set height JS
+    var $ls;
+    function autoheight() {
+        var max = 0;
+        $ls.each(function() {
+            $t = $(this);
+            $t.css('height','');
+            max = Math.max(max, $t.height());
+        });
+        $ls.height(max);
+    }
+    $(function() {
+        $ls = $('.card-autoheight'); // the inline-block selector
+        autoheight(); // first time
+        $ls.on('load', autoheight); // when images in content finish loading
+        $(window).load(autoheight); // when all content finishes loading
+        $(window).resize(autoheight); // when the window size changes
     });
 });
 </script>
