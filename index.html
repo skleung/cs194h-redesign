@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS194H - User Experience Design Project</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+</head>
+
+<nav class="teal ">
+    <div class="nav-wrapper z-depth-2">
+        <div class="container">
+            <a href="#" class="brand-logo">dt+UX<sup>2</sup></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Studios</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Logistics</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="header-img">
+    <section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col m5 s12">
+                    <h1>CS194H</h1>
+                    <p>User Experience Design Project</p>
+                </div>
+            </div>
+            <a class="btn-floating scroll-link deep-orange right btn-large waves-effect waves-light z-depth-0" href="#about">
+                <i class="fa fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+</div>
+
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/design-bg.png">
+                        <span class="card-title">Design</span>
+                    </div>                        
+                    <div class="card-content teal-text text-darken-3">
+                        <p>
+                            The dt+UX^2 course (CS194H) focuses on bringing design thinking, processes, and tools to human-computer interaction. Students in the course continue to improve on the designs they created in the prior quarter's course (CS147).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="img/prototype-bg.png">
+                        <span class="card-title">Prototype</span>
+                    </div>                        
+                    <div class="card-content teal-text text-darken-3">
+                        <p>
+Prototyping turns ideas into tangible forms that can be included or excluded in the next design iteration. Students in the dt+UX^2 course focus on impoving their hi-fidelity protypes running on the target platform.                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s4">
+                <div class="card">
+                    <div class="card-image teal">
+                        <img src="">
+                        <span class="card-title">Evaluate</span>
+                    </div>                        
+                    <div class="card-content teal-text text-darken-3">
+                        <p>
+Evaluation is how we choose whether a design or feature moves forward in our process or needs to be discarded or revised. Students in the dt+UX^2 course apply usability testing in the lab and in the field to improve their designs.                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p class="grey-text">Design by <a class="teal-text" href="http://shermanleung.com">Sherman Leung</a>. Last updated 2/2016</p>
+    </div>
+</footer>
+
+<script>
+// smooth scrolling JS
+$(function() {
+    var hashTagActive = "";
+    $(".scroll-link").click(function (event) {
+        if(hashTagActive != this.hash) { //this will prevent if the user click several times the same link to freeze the scroll.
+            event.preventDefault();
+            //calculate destination place
+            var dest = 0;
+            if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+                dest = $(document).height() - $(window).height();
+            } else {
+                dest = $(this.hash).offset().top;
+            }
+                //go to destination
+            $('html,body').animate({
+                scrollTop: dest
+            }, 2000, 'swing');
+            hashTagActive = this.hash;
+        }
+    });
+});
+</script>
+</html>
