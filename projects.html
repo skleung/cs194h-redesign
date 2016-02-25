@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
@@ -23,14 +23,15 @@
                 <li><a href="calendar.html">Calendar</a></li>
                 <li class="active"><a href="projects.html">Projects</a></li>
                 <li><a href="studios.html">Studios</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
                 <li><a href="logistics.html">Logistics</a></li>
             </ul>
             <ul class="side-nav" id="mobile-menu">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="calendar.html">Calendar</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="studios.html">Studios</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
                 <li><a href="logistics.html">Logistics</a></li>
             </ul>
         </div>
@@ -125,7 +126,7 @@ $(function() {
         $ls.on('load', autoheight); // when images in content finish loading
         $(window).load(autoheight); // when all content finishes loading
         $(window).resize(autoheight); // when the window size changes
-        
+
         // load projects
         var project_template = Handlebars.compile($("#project-card-template").html());
         for (var i=0; i<projects.length; i+=2) {
