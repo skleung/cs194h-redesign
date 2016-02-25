@@ -1,5 +1,5 @@
 .header-img {
-    background-image: url(http://cache3.asset-cache.net/xd/467166666.jpg?v=1&c=IWSAsset&k=2&d=62CA815BFB1CE4806D23BB0D47AB81B32B6A5D266AEA58DB244503865E9816A8C059E632BD9CFA0E);
+    background-image: url(http://theartmad.com/wp-content/uploads/2015/02/Blue-Geometric-Background-4.jpg);
     /*background-image: url(img/header-bg.jpg);*/
     background-position-x: center;
     background-position-y: center;
@@ -31,4 +31,20 @@
 
 #about .card-image img {
     height: 136px;
+}
+
+a {
+    color: #009688;
+}
+
+a:hover {
+    color: #4db6ac;
+}
+
+.lead {
+    font-size: 18px;
+}
+
+.top-margin {
+    margin-top: 50px;
 }
