@@ -53,3 +53,8 @@ a:hover {
     text-decoration: italic;
     margin-bottom: 15px;
 }
+
+#map {
+    width: 100%;
+    height: 500px;
+}
