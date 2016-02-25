@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </head>
@@ -15,12 +17,20 @@
 <nav class="teal">
     <div class="nav-wrapper z-depth-2">
         <div class="container">
-            <a href="index.html" class="brand-logo">dt+UX<sup>2</sup></a>
+            <a href="#" class="brand-logo">dt+UX<sup>2</sup></a>
+            <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">Calendar</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li class="active"><a href="studios.html">Studios</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
+                <li><a href="logistics.html">Logistics</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-menu">
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="studios.html">Studios</a></li>
+                <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
                 <li><a href="logistics.html">Logistics</a></li>
             </ul>
         </div>
@@ -47,10 +57,7 @@
 <section id="studios" class="top-margin">
     <div class="row">
         <div class="container">
-            <div class="collection">
-                <a href="#!" class="collection-item">Sherman L</a>
-                <a href="#!" class="collection-item">Sherman L</a>
-                <a href="#!" class="collection-item">Sherman L</a>
+            <div class="collection" id="students">
             </div>
         </div>
     </div>
@@ -61,6 +68,11 @@
         <p class="grey-text">Design by <a class="teal-text" href="http://shermanleung.com">Sherman Leung</a>. Last updated 2/2016</p>
     </div>
 </footer>
+
+<script src="data/data.js"></script>
+<script id="studio-template" type="text/x-handlebars-template">
+    <a href="{{link}}" class="collection-item">{{name}}</a>
+</script>
 
 <script>
 // smooth scrolling JS
@@ -96,6 +108,14 @@ $(function() {
         $ls.height(max);
     }
     $(function() {
+        // adding students
+        var studio_template = Handlebars.compile($("#studio-template").html());
+        $.each(students, function(i, student) {
+            $("#students").append(studio_template(student));
+        });
+
+        // add side menu button
+        $(".button-collapse").sideNav();
         $ls = $('.card-autoheight'); // the inline-block selector
         autoheight(); // first time
         $ls.on('load', autoheight); // when images in content finish loading

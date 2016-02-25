@@ -48,3 +48,8 @@ a:hover {
 .top-margin {
     margin-top: 50px;
 }
+
+.card-subtitle {
+    text-decoration: italic;
+    margin-bottom: 15px;
+}

@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </head>
@@ -15,10 +17,18 @@
 <nav class="teal">
     <div class="nav-wrapper z-depth-2">
         <div class="container">
-            <a href="index.html" class="brand-logo">dt+UX<sup>2</sup></a>
+            <a href="#" class="brand-logo">dt+UX<sup>2</sup></a>
+            <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#">Calendar</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
                 <li class="active"><a href="projects.html">Projects</a></li>
+                <li><a href="studios.html">Studios</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="logistics.html">Logistics</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-menu">
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
                 <li><a href="studios.html">Studios</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="logistics.html">Logistics</a></li>
@@ -45,34 +55,7 @@
 </div>
 
 <section id="projects" class="top-margin">
-    <div class="row">
-        <div class="container">
-            <div class="col s6">
-                <div class="card white card-autoheight">
-                    <div class="card-content teal-text" style="padding-bottom: 5px">
-                        <span class="card-title"><b>Spark</b></span>
-                        <p><i>Helping Teachers Help Students.</i></p>
-                        <div class="row" style="margin-top: 10px; margin-left: 0px">
-                            <div class="chip">
-                                Bronson L
-                            </div>
-                            <div class="chip">
-                                Lucas T
-                            </div>
-                            <div class="chip">
-                                Nathan E
-                            </div>
-                            <div class="chip">
-                                Kevin K
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-action white-text">
-                        <a class="deep-orange waves-effect white-text waves-light btn" href="#">Project Website</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container" id="projects-wrapper">
     </div>
 </section>
 
@@ -81,6 +64,26 @@
         <p class="grey-text">Design by <a class="teal-text" href="http://shermanleung.com">Sherman Leung</a>. Last updated 2/2016</p>
     </div>
 </footer>
+
+<script id="project-card-template" type="text/x-handlebars-template">
+<div class="card white card-autoheight">
+    <div class="card-content teal-text" style="padding-bottom: 5px">
+        <span class="card-title"><b>{{title}}</b></span>
+        <p><i>{{tagline}}</i></p>
+        <div class="row" style="margin-top: 10px; margin-left: 0px">
+            {{#each students}}
+            <div class="chip">
+                {{this}}
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="card-action white-text">
+        <a class="deep-orange waves-effect white-text waves-light btn" href="#">Project Website</a>
+    </div>
+</div>
+</script>
+<script src="data/data.js"></script>
 
 <script>
 // smooth scrolling JS
@@ -116,12 +119,38 @@ $(function() {
         $ls.height(max);
     }
     $(function() {
+        $(".button-collapse").sideNav();
         $ls = $('.card-autoheight'); // the inline-block selector
         autoheight(); // first time
         $ls.on('load', autoheight); // when images in content finish loading
         $(window).load(autoheight); // when all content finishes loading
         $(window).resize(autoheight); // when the window size changes
+        
+        // load projects
+        var project_template = Handlebars.compile($("#project-card-template").html());
+        for (var i=0; i<projects.length; i+=2) {
+            var row = $('<div />', {
+                "class": "row"
+            });
+            var col1 = $('<div />', {
+                "class": "col m6"
+            });
+            var col2 = $('<div />', {
+                "class": "col m6"
+            });
+            col1.html(project_template(projects[i]));
+            row.append(col1);
+            if (i+1 < projects.length) {
+                col2.html(project_template(projects[i+1]));
+                row.append(col2);
+            } else {
+                col1.attr('class', 'col m6 offset-m3')
+            }
+            $("#projects-wrapper").append(row);
+        }
     });
+
+
 });
 </script>
 </html>

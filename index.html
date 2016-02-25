@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
@@ -16,11 +17,19 @@
     <div class="nav-wrapper z-depth-2">
         <div class="container">
             <a href="#" class="brand-logo">dt+UX<sup>2</sup></a>
+            <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="calendar.html">Calendar</a></li>
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="studios.html">Studios</a></li>
-                <li><a href="resources.html">Resources</a></li>
+                <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
+                <li><a href="logistics.html">Logistics</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-menu">
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="studios.html">Studios</a></li>
+                <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
                 <li><a href="logistics.html">Logistics</a></li>
             </ul>
         </div>
@@ -66,7 +75,7 @@
 <section id="about">
     <div class="container">
         <div class="row">
-            <div class="col s4">
+            <div class="col m4">
                 <div class="card card-autoheight">
                     <div class="card-image">
                         <img src="img/design-bg.png">
@@ -80,7 +89,7 @@
                 </div>
             </div>
 
-            <div class="col s4">
+            <div class="col m4">
                 <div class="card card-autoheight">
                     <div class="card-image">
                         <img src="img/prototype-bg.png">
@@ -93,7 +102,7 @@ Prototyping turns ideas into tangible forms that can be included or excluded in 
                 </div>
             </div>
 
-            <div class="col s4">
+            <div class="col m4">
                 <div class="card card-autoheight">
                     <div class="card-image teal">
                         <img src="http://www.mediabarninc.com/wp-content/uploads/2011/01/759217257407.jpg">
@@ -150,6 +159,7 @@ $(function() {
         $ls.height(max);
     }
     $(function() {
+        $(".button-collapse").sideNav();
         $ls = $('.card-autoheight'); // the inline-block selector
         autoheight(); // first time
         $ls.on('load', autoheight); // when images in content finish loading

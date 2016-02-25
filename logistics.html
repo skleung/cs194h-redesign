@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CS194H - User Experience Design Project: Calendar</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+</head>
+
+<nav class="teal">
+    <div class="nav-wrapper z-depth-2">
+        <div class="container">
+            <a href="#" class="brand-logo">dt+UX<sup>2</sup></a>
+            <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="active"><a href="calendar.html">Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="studios.html">Studios</a></li>
+                <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
+                <li><a href="logistics.html">Logistics</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-menu">
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="studios.html">Studios</a></li>
+                <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
+                <li><a href="logistics.html">Logistics</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="top-margin">
+  <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s4"><a class=" teal-text" href="#teaching-staff">Teaching Staff</a></li>
+            <li class="tab col s4"><a class="active teal-text" href="#grading">Grading</a></li>
+            <li class="tab col s4"><a class="teal-text" href="#logistics">Time & Place</a></li>
+            <div class="indicator teal" style="z-index:1"></div>
+
+          </ul>
+        </div>
+        <div id="teaching-staff" class="col s12">
+          <div class="row">
+            <div class="col m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-img" src="img/landay.jpg">
+                    </div>                        
+                    <div class="card-content teal-text">
+                        <div class="card-title"><b>James Landay</b></div>
+                        <div class="card-subtitle">Professor of Computer Science</div>
+                        <p class="top-margin">
+                          <div class="chip">
+                            Mon (2-3PM)
+                          </div>
+                          <div class="chip">
+                            Wed (10-11AM)
+                          </div>
+                          <div class="chip teal lighten-4">
+                            @Gates 390
+                          </div>
+                        </p>
+                    </div>
+                    <div class="card-action ">
+                      <a class="deep-orange-text">landay@cs.stanford.edu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-img" src="img/sherman.jpg">
+                    </div>                        
+                    <div class="card-content teal-text">
+                        <div class="card-title"><b>Sherman Leung</b></div>
+                        <div class="card-subtitle">Course Assistant</div>
+                        <p class="top-margin">
+                          <div class="chip">
+                            Tues/Thurs (10:30-11:30AM)
+                          </div>
+                          <div class="chip teal lighten-4">
+                            @Tressider Union
+                          </div>
+                        </p>
+                    </div>
+                    <div class="card-action ">
+                      <a class="deep-orange-text">sherman@cs.stanford.edu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col m4">
+                <div class="card">
+                    <div class="card-image">
+                        <img class="responsive-img" src="img/chris.jpg">
+                    </div>                        
+                    <div class="card-content teal-text">
+                        <div class="card-title"><b>Chris Min</b></div>
+                        <div class="card-subtitle">Course Assistant</div>
+                        <p class="top-margin">
+                          <div class="chip">
+                            TBD
+                          </div></br>
+                          <div class="chip teal lighten-4">
+                            TBD
+                          </div>
+                        </p>
+                    </div>
+                    <div class="card-action ">
+                      <a class="deep-orange-text">chrismin@stanford.edu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+      <div id="grading" class="col s10 offset-s1 teal-text">
+        <h4>Individual Assignments</h4>
+        <div class="row">
+            <div class="col offset-s1">
+              5 written/studio assignments </br>
+              1 presentation/team member
+            </div>
+        </div>
+        <h4>Team Assignments</h4>
+        <div class="row">
+          <div class="col offset-s1">
+            8 team assignments </br>
+            Team Project web site </br>
+            5 presentation/demos  </br>
+            Final video + poster </br>
+            All group work handed in on team web site 
+          </div>
+        </div>
+        </ul>
+        <h4>Grade Breakdown</h4>
+          <div class="col offset-s1">
+            Individual assignments & individual presentation (30%)</br>
+            Class/studio participation (10%)</br>
+            Group project (60%)</br>
+            No quizes or exams</br>
+            <b>Late policy:</b> no lates on group assignments, individual assignments lose 10%/day late</br>
+          </div>
+
+      </div>
+      <div id="logistics" class="col s10 offset-s1 center-align">
+        <!-- The map below is generated with http://embedgooglemaps.com/en/ -->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script><div style="overflow:hidden;height:500px;width:100%;"><div id="gmap_canvas" style="height:500px;width:100%;"></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style><a class="google-map-code" href="http://www.pureblack.de" id="get-map-data">werbeagentur muehldorf</a></div><script type="text/javascript"> function init_map(){var myOptions = {zoom:17,center:new google.maps.LatLng(37.4261458,-122.17113799999998),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById("gmap_canvas"), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(37.4261458, -122.17113799999998)});infowindow = new google.maps.InfoWindow({content:"<b>CS194H Lectures</b><br/>439 Panama Mall<br/>94305 Stanford" });google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+        <div style="margin-top: 10px">
+          <div class="chip">
+            Tues/Thurs 11:30AM-1:20PM
+          </div>
+          <div class="chip teal lighten-3">
+            @540-108
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p class="grey-text">Design by <a class="teal-text" href="http://shermanleung.com">Sherman Leung</a>. Last updated 2/2016</p>
+    </div>
+</footer>
+
+<script>
+  $(function() {
+    $(".button-collapse").sideNav();    
+  });
+</script>
+</html>
