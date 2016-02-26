@@ -23,7 +23,12 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="studios.html">Studios</a></li>
                 <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
-                <li><a href="logistics.html">Logistics</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Course Details<i class="material-icons right">arrow_drop_down</i></a></li>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="logistics.html#teaching-staff">Teaching Staff</a></li>
+                    <li><a href="logistics.html#grading">Grading</a></li>
+                    <li><a href="logistics.html#logistics">Logistics</a></li>
+                </ul>
             </ul>
             <ul class="side-nav" id="mobile-menu">
                 <li><a href="index.html">Home</a></li>
@@ -31,7 +36,8 @@
                 <li><a href="projects.html">Projects</a></li>
                 <li><a href="studios.html">Studios</a></li>
                 <li><a href="https://docs.google.com/document/d/1ByWf9fYl2gzhHpWmZzm35L1NcPca1wb4zR0_zZlXT1Y/preview">Resources</a></li>
-                <li><a href="logistics.html">Logistics</a></li>
+                
+                <li><a href="logistics.html">Course Details</a></li>
             </ul>
         </div>
     </div>
@@ -46,10 +52,7 @@
                     <h5>Winter 2016</h5>
                     <div class="row" style="margin-top: 30px">
                         <div class="col m6">
-                            <a class="deep-orange waves-effect waves-light btn" href="projects.html">Curent Projects</a>
-                        </div>
-                        <div class="col m6">
-                            <a class="white deep-orange-text waves-effect btn" href="#">Syllabus</a>
+                            <a class="deep-orange waves-effect waves-light btn" href="projects.html" style="width: 250px">Current Projects</a>
                         </div>
                     </div>
                 </div>
@@ -82,9 +85,9 @@
                         <img src="img/design-bg.png">
                         <span class="card-title">Design</span>
                     </div>                        
-                    <div class="card-content teal-text text-darken-3">
+                    <div class="card-content teal-text">
                         <p>
-                            The dt+UX^2 course (CS194H) focuses on bringing design thinking, processes, and tools to human-computer interaction. Students in the course continue to improve on the designs they created in the prior quarter's course (CS147).
+The dt+UX^2 course (CS194H) focuses on bringing design thinking, processes, and tools to human-computer interaction. Students in the course continue to improve on the designs they created in the prior quarter's course (CS147).
                         </p>
                     </div>
                 </div>
@@ -96,7 +99,7 @@
                         <img src="img/prototype-bg.png">
                         <span class="card-title">Prototype</span>
                     </div>                        
-                    <div class="card-content teal-text text-darken-3">
+                    <div class="card-content teal-text">
                         <p>
 Prototyping turns ideas into tangible forms that can be included or excluded in the next design iteration. Students in the dt+UX^2 course focus on impoving their hi-fidelity protypes running on the target platform.                        </p>
                     </div>
@@ -110,7 +113,7 @@ Prototyping turns ideas into tangible forms that can be included or excluded in 
                         <span class="card-title">Evaluate</span>
                     </div>
 
-                    <div class="card-content teal-text text-darken-3">
+                    <div class="card-content teal-text">
                         <p>
 Evaluation is how we choose whether a design or feature moves forward in our process or needs to be discarded or revised. Students in the dt+UX^2 course apply usability testing in the lab and in the field to improve their designs.                        </p>
                     </div>
@@ -160,7 +163,10 @@ $(function() {
         $ls.height(max);
     }
     $(function() {
+        //activates dropdown and the mobile side menu button
+        $(".dropdown-button").dropdown();
         $(".button-collapse").sideNav();
+        // adjusts the height to be the height of the tallest card
         $ls = $('.card-autoheight'); // the inline-block selector
         autoheight(); // first time
         $ls.on('load', autoheight); // when images in content finish loading
