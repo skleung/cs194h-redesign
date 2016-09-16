@@ -69,7 +69,7 @@
 
 <footer>
     <div class="container">
-        <p class="grey-text">Design by <a class="teal-text" href="http://shermanleung.com">Sherman Leung</a>. Last updated 2/2016</p>
+        Last updated 9/2016</p>
     </div>
 </footer>
 
@@ -136,26 +136,39 @@ $(function() {
 
         // load projects
         var project_template = Handlebars.compile($("#project-card-template").html());
-        for (var i=0; i<projects.length; i+=2) {
+        for (var a=0; a<studios.length; a+=1) {
             var row = $('<div />', {
                 "class": "row"
             });
-            var col1 = $('<div />', {
-                "class": "col m6"
+
+            var studio_header = $('<h2 />', {
+                "class": "row"
             });
-            var col2 = $('<div />', {
-                "class": "col m6"
-            });
-            col1.html(project_template(projects[i]));
-            row.append(col1);
-            if (i+1 < projects.length) {
-                col2.html(project_template(projects[i+1]));
-                row.append(col2);
-            } else {
-                col1.attr('class', 'col m6 offset-m3')
-            }
+            studio_header.html(studios[a].name);
+            row.append(studio_header);
             $("#projects-wrapper").append(row);
-        }
+            var projects = studios[a].projects;
+            for (var i=0; i<projects.length; i+=2) {
+                var row = $('<div />', {
+                    "class": "row"
+                });
+                var col1 = $('<div />', {
+                    "class": "col m6"
+                });
+                var col2 = $('<div />', {
+                    "class": "col m6"
+                });
+                col1.html(project_template(projects[i]));
+                row.append(col1);
+                if (i+1 < projects.length) {
+                    col2.html(project_template(projects[i+1]));
+                    row.append(col2);
+                } else {
+                    col1.attr('class', 'col m6 offset-m3')
+                }
+                $("#projects-wrapper").append(row);
+            }
+        }    
     });
 
 
