@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CS194H - User Experience Design Project: Calendar</title>
+    <title>CS147 - Introduction to Human Computer Interaction Design</title>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
@@ -16,7 +16,7 @@
 <nav class="teal">
     <div class="nav-wrapper z-depth-2">
         <div class="container">
-            <a href="index.html" class="brand-logo">dt+UX<sup>2</sup></a>
+            <a href="index.html" class="brand-logo">DT+UX</a>
             <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="calendar.html">Calendar</a></li>
@@ -26,6 +26,7 @@
                 <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Course Details<i class="material-icons right">arrow_drop_down</i></a></li>
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><a href="#teaching-staff">Teaching Staff</a></li>
+                    <li><a href="#syllabus">Syllabus</a></li>
                     <li><a href="#grading">Grading</a></li>
                     <li><a href="#logistics">Logistics</a></li>
                 </ul>
@@ -47,9 +48,10 @@
       <div class="row">
         <div class="col s12">
           <ul class="tabs">
-            <li class="tab col s4"><a class="teal-text" href="#teaching-staff">Teaching Staff</a></li>
-            <li class="tab col s4"><a class="teal-text" href="#grading">Grading</a></li>
-            <li class="tab col s4"><a class="teal-text" href="#logistics">Time & Place</a></li>
+            <li class="tab col s3"><a class="teal-text" href="#teaching-staff">Teaching Staff</a></li>
+            <li class="tab col s3"><a class="teal-text" href="#syllabus">Syllabus</a></li>
+            <li class="tab col s3"><a class="teal-text" href="#grading">Grading</a></li>
+            <li class="tab col s3"><a class="teal-text" href="#logistics">Time & Place</a></li>
             <div class="indicator teal" style="z-index:1"></div>
           </ul>
         </div>
@@ -194,9 +196,40 @@
             </div>
         </div>
       </div>
-      <div id="grading" class="col s10 offset-s1 grey-text text-darken-3">
-        What goes here??
+      <div id="syllabus" class="col s12">
+        TBD.
+      </div>
 
+      <div id="grading" class="col s12">
+        <h4>Grading</h4>
+        <ul>
+          <li>Individual assignments &amp; individual presentation (10%)</li>
+          <li>Class/studio participation (10%)</li>
+          <li>Midterm (20%)</li>
+          <li>Group project (60%)</li>
+          <li>No curve</li>
+          <li>No final</li>
+          <li>Late policy: no lates on group assignments, individual assignments lose 10%/day late</li>
+        </ul>
+
+        <h4>Assignments</h4>
+        <p>An <a href="assignments/ListofAssignments-2015au.pdf">overview of all the assignments</a>. Broken down by:
+        </p>
+        <ul>
+          <li>Individual
+            <ul>
+              <li>1-2 written or in-studio</li>
+              <li>1-2 presentations/team member</li>
+            </ul>
+          </li>
+          <li>Group/Team
+            <ul>
+              <li>9 "written" assignments/presentations</li>
+              <li>also 3 written reports + video + pitch slide + poster</li>
+              <li>all group work handed in on team web site & assignment hand-in site (<a href="https://coursework.stanford.edu/portal/site/F15-CS-147-01">coursework.stanford.edu</a>)</li>
+            </ul>
+          </li>
+        </ul>
       </div>
       <div id="logistics" class="col s10 offset-s1 center-align">
         <!-- The map below is generated with http://embedgooglemaps.com/en/ -->
@@ -242,12 +275,13 @@
     $ls.on('load', autoheight); // when images in content finish loading
     $(window).load(autoheight); // when all content finishes loading
     $(window).resize(autoheight); // when the window size changes
+    $(window).load(initMap)
   });
 
   function initMap() {
     var mapDiv = document.getElementById('map');
     // change the below geopoint if the classroom location changes
-    var lecture_location = {lat: 37.4291759, lng: -122.1678134,18.87}
+    var lecture_location = {lat: 37.4291471, lng: -122.1674258}
     var infowindow = new google.maps.InfoWindow();
     
     var map = new google.maps.Map(mapDiv, {
@@ -257,10 +291,10 @@
     var marker = new google.maps.Marker({
       position: lecture_location,
       map: map,
-      title: 'CS147 Lecture Location'
+      title: 'CS194H Lecture Location'
     });
 
-    infowindow.setContent("<p><b>CS147 Lecture Location</b> </br> Bishop Auditorium, Lathrop Library</p>");
+    infowindow.setContent("<p><b>CS194H Lecture Location</b> </br> Building 540, Room 180</p>");
     infowindow.open(map,marker);
 
     google.maps.event.addListenerOnce(map, 'idle', function() {
@@ -268,6 +302,11 @@
       map.setCenter(lecture_location); // be sure to reset the map center as well
     });
   }
+
+  $(".tabs").click(function() {
+    autoheight();
+    initMap();
+  })
 
   $(".dropdown-content a").click(function() {
      // automatically sets the tab to the correct tab
