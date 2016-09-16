@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CS194H - User Experience Design Project</title>
+    <title>CS147 - Introduction to Human Computer Interaction Design</title>
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fa.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script src="jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 </head>
 
 <nav class="teal ">
     <div class="nav-wrapper z-depth-2">
         <div class="container">
-            <a href="#" class="brand-logo">dt+UX<sup>2</sup></a>
+            <a href="#" class="brand-logo">HCI+D</a>
             <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li><a href="calendar.html">Calendar</a></li>
@@ -45,32 +46,37 @@
 <div class="header-img">
     <section id="hero">
         <div class="container">
-            <div class="row">
+            <div class="row valign-wrapper">
                 <div class="col m6">
-                    <h1>CS194H</h1>
-                    <h5 style="margin-top: 20px">User Experience Design Project</h5>
-                    <h5>Winter 2016</h5>
+                    <h1>CS147</h1>
+                    <h5 style="margin-top: 20px">Introduction to Human Computer Interaction Design</h5>
+                    <h5>Fall 2016</h5>
                     <div class="row" style="margin-top: 30px">
                         <div class="col m6">
-                            <a class="deep-orange waves-effect waves-light btn" href="projects.html" style="width: 250px">Current Projects</a>
+                            <a class="deep-orange waves-effect waves-light btn" href="projects.html" style="">Projects</a>
+                        </div>
+                        <div class="col m6">
+                            <a class="deep-orange-text white waves-effect waves-light btn" href="https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&page=0&catalog=&q=CS+147+Introduction+to+Human+Computer+Interaction+Design&collapse=">ExploreCourses</a>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col m6">
-                    <div class="card" style="deep-orange lighten-5">
+                <div class="col m6">
+                    <div class="card">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="img/studios.JPG">
+                        </div>
                         <div class="card-content">
-                            <div class="card-title deep-orange-text">
-                                <b>Course Description</b>    
-                            </div>
-                            <p class="deep-orange-text">
-                                Advanced methods for designing, prototyping, and evaluating user interfaces to computing applications. Novel interface technology, advanced interface design methods, and prototyping tools. Substantial, quarter-long course project that will be presented in a public presentation.
+                            <span class="card-title activator grey-text text-darken-3">Studios<i class="material-icons right">more_vert</i></span>
+                            <p><a class="deep-orange-text" href="#">Learn More</a></p>
+                        </div>
+                            <div class="card-reveal grey-text text-darken-3">
+                            <span class="card-title grey-text text-darken-3">Studios<i class="material-icons right">close</i></span>
+                            <p>
+                                Student teams meet in small studios of 10-16 students for hands-on learning and personalized feedback. Each studio had a specific theme catering to students who want to actively learn towards that theme.
                             </p>
                         </div>
-                        <div class="card-action deep-orange-text">
-                            <p> Prerequisites: CS 147, or permission of instructor.</p>
-                        </div>
                     </div>
-                </div> -->
+                </div>
             </div>
         </div>
     </section>
@@ -85,7 +91,7 @@
                         <img src="img/design-bg.png">
                         <span class="card-title">Design</span>
                     </div>                        
-                    <div class="card-content teal-text">
+                    <div class="card-content grey-text text-darken-3">
                         <p>
 The dt+UX^2 course (CS194H) focuses on bringing design thinking, processes, and tools to human-computer interaction. Students in the course continue to improve on the designs they created in the prior quarter's course (CS147).
                         </p>
@@ -99,7 +105,7 @@ The dt+UX^2 course (CS194H) focuses on bringing design thinking, processes, and 
                         <img src="img/prototype-bg.png">
                         <span class="card-title">Prototype</span>
                     </div>                        
-                    <div class="card-content teal-text">
+                    <div class="card-content grey-text text-darken-3">
                         <p>
 Prototyping turns ideas into tangible forms that can be included or excluded in the next design iteration. Students in the dt+UX^2 course focus on impoving their hi-fidelity protypes running on the target platform.                        </p>
                     </div>
@@ -113,7 +119,7 @@ Prototyping turns ideas into tangible forms that can be included or excluded in 
                         <span class="card-title">Evaluate</span>
                     </div>
 
-                    <div class="card-content teal-text">
+                    <div class="card-content grey-text text-darken-3">
                         <p>
 Evaluation is how we choose whether a design or feature moves forward in our process or needs to be discarded or revised. Students in the dt+UX^2 course apply usability testing in the lab and in the field to improve their designs.                        </p>
                     </div>
@@ -172,6 +178,11 @@ $(function() {
         $ls.on('load', autoheight); // when images in content finish loading
         $(window).load(autoheight); // when all content finishes loading
         $(window).resize(autoheight); // when the window size changes
+    });
+
+    $(document).ready(function(){
+      // $('.carousel').carousel();
+      $('.carousel.carousel-slider').carousel({full_width: true, indicators: true});
     });
 });
 </script>
