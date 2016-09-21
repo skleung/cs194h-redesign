@@ -70,3 +70,24 @@ a:hover {
 #grading ul li {
     list-style-type: circle;
 }
+
+.chip-margin {
+    margin-top: 10px;
+}
+.m3 .card-action .deep-orange-text {
+    font-size: 12px;
+}
+.card-image-crop {
+    max-width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.m4 .card-image-crop {
+    max-width: 100%;
+    height: 265px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
