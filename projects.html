@@ -142,10 +142,14 @@ $(function() {
             });
 
             var studio_header = $('<h2 />', {
-                "class": "row"
             });
             studio_header.html(studios[a].name);
+
+            var studio_blurb = $('<p />', {
+            });
+            studio_blurb.html(studios[a].blurb);
             row.append(studio_header);
+            row.append(studio_blurb);
             $("#projects-wrapper").append(row);
             var projects = studios[a].projects;
             for (var i=0; i<projects.length; i+=2) {
